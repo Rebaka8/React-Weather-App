@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+}
+
+.app {
+  /* Let the app expand vertically if content grows (fixes background cutoff) */
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-image 1s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-shadow: 2px 2px 8px #000;
+}
+
+.container {
+  background: rgba(0, 0, 0, 0.45);
+  padding: 30px;
+  border-radius: 15px;
+  width: 320px;
+  box-shadow: 0 0 15px 5px rgba(0,0,0,0.6);
+  animation: fadeIn 1s ease forwards;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+.input {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: none;
+  margin-bottom: 15px;
+  transition: box-shadow 0.3s ease;
+}
+
+.input:focus {
+  outline: none;
+  box-shadow: 0 0 10px 3px #00d2ff;
+}
+
+.btn {
+  width: 100%;
+  background-color: #00d2ff;
+  border: none;
+  padding: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  color: black;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover:not(:disabled) {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #00d2ff;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.error {
+  color: #ff6b6b;
+  margin-top: 15px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.weather-info {
+  margin-top: 20px;
+  text-align: center;
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+.weather-info h2 {
+  margin-bottom: 5px;
+}
+
+.weather-info p {
+  margin: 5px 0;
+  font-weight: 500;
+}
+
+.weather-info img {
+  width: 80px;
+  height: 80px;
+  margin: 10px 0;
+}
+
+.aqi-debug {
+  background: rgba(255,255,255,0.06);
+  padding: 10px;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 0.8rem;
+  max-height: 160px;
+  overflow: auto;
+  white-space: pre-wrap;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
